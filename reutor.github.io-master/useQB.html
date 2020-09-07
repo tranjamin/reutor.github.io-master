@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+    <head>
+        <title>Reutor</title>
+        <link href="./css/main.css" type="text/css" rel="stylesheet"></link>
+    </head>
+    <header>
+        <span class="LISU"><p id="welcomeMessage"></p><p id="signup_button" class="navButton">LOGIN/SIGNUP</p></span>
+        <span class="nav"><p><span class='navButton' id="homeButton" onclick="window.location.href='index.html'">HOME</span>  
+            This site was created by 
+            <a id="link" target="_blank" href="http://rooster202.github.io">Reuben</a>,
+            <a id="link" target="_blank" href="http://tranjamin.github.io">Ben</a> and 
+            <a id="link" target="_blank" href="http://nebrok.github.io">Korben</a>
+        </p></span>
+        <h1><span id="Logo"><span id="BigR">R</span>eutor</span></h1>
+        <br><br>
+    </header>
+    <body>
+        <div class="pageContent">
+            <h2>Find Questions:</h2>
+            <br>
+
+            <form id="findQstnForm">
+                <label for='subject'>Subject:</label>
+                <select name="subject" required>
+                    <option value="" disabled selected hidden>-- SELECT --</option>
+                    <option>Chemistry</option>
+                    <option>Physics</option>
+                    <option>Maths Methods</option>
+                    <option>Maths Specialist</option>
+                    <option>Engineering</option>
+                    <option>English</option>
+                </select><br>
+                <label for='unit'>Unit:</label>
+                <select name="unit" required>
+                    <option value="" disabled selected hidden>-- SELECT --</option>
+                    <option>Unit 1</option>
+                    <option>Unit 2</option>
+                    <option>Unit 3</option>
+                    <option>Unit 4</option>
+                </select><br>
+                
+                <!--
+                <label for="U1">Unit 1</label><input id="U1" type='checkbox'>
+                <label for="U2">Unit 2</label><input id="U2" type='checkbox'>
+                <label for="U3">Unit 3</label><input id="U3" type='checkbox'>
+                <label for="U4">Unit 4</label><input id="U4" type='checkbox'><br>
+                -->
+                <label for="SF">Simple Famliar</label><input name="SF" checked type='checkbox'>
+                <label for="CF">Complex Familiar</label><input name="CF" checked type='checkbox'>
+                <label for="CU">Complex Unfamiliar</label><input name="CU" checked type='checkbox'><br>
+
+                <label for="techFree">Tech Free</label><input name="techFree" checked type='checkbox'>
+                <label for="techActive">Tech Active</label><input name="techActive" checked type='checkbox'>
+                <label for="dunno">Dunno</label><input name="dunno" checked type='checkbox'><br><br>
+                
+                <div id="topicDiv"></div>
+
+                <br><br>
+                <input id='generateButton' type='submit' value="Generate Questions">
+            </form>
+            
+            <br><br>
+            <p><span>&#9734</span>: Bookmark Question   |&nbsp<span>&#9998</span>: Send Feedback   |&nbsp<span>&#9872</span>: Flag for Spam or Inappropriate Content  |&nbsp<span>&#128465</span>: Do not suggest again</p>
+            <hr>
+            <div id='questionZone'></div>
+
+
+        </div>
+
+
+        <!-- BENS LOG IN / SIGN UP FORM: -->
+        <div id="signup_form">
+            <p>Login</p>
+            <form>
+                <input type="text" placeholder="Username" name="usernameLI" required><br>
+                <input type="password" placeholder="Password" name="passwordLI" required><br>
+                <input type="submit" value="Login">
+            </form>
+            <span class="error"></span>
+            <span>or</span><br><p>Signup</p>
+            <form>
+                <input type="text" placeholder="Create Username" name="usernameSU" required><br>
+                <input type="password" placeholder="Create Password" name="passwordSU" required><br>
+                <input type="password" placeholder="Confirm Password" name="confirmSU" required><br>
+                <input type="submit" value="Signup">
+            </form>
+            <span class="error"></span>
+        </div>
+
+
+
+
+
+        <!-- --------------------JAVASCRIPT-------------------  -->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDDA6cL7gj05Qf82o5SvoOOP1mZck3UKp8",
+            authDomain: "rutor-1962a.firebaseapp.com",
+            databaseURL: "https://rutor-1962a.firebaseio.com",
+            projectId: "rutor-1962a",
+            storageBucket: "rutor-1962a.appspot.com",
+            messagingSenderId: "1097644424015",
+            appId: "1:1097644424015:web:295af3229b7d7801c7a33a",
+            measurementId: "G-H4T4CK6YN7"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        var database = firebase.database();
+        const auth = firebase.auth();
+        console.log('geohgoe')
+        </script>
+        <script src='./javascript/useQB.js'></script>
+    </body>
+
+
+</html>
